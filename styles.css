@@ -11,15 +11,15 @@
 {
     user-select: none;
     --mask: linear-gradient(90deg, transparent, black 15%, black 85%, transparent);
-    --mainOrng: #79ae45;
+    --mainGreen: #79ae45;
     --mainPrpl: #ae456d;
-    --mainOrng1: #5ba90d;
+    --mainGreen1: #5ba90d;
     --mainPrpl1: #c00a6b;
     --container: #d4c5fd44;
     --container2: #3a384344;
     --maskWidth: calc(25rem + 20vw);
-    --gradient: linear-gradient(90deg, var(--mainPrpl) 0%, var(--mainOrng) 20%, var(--mainPrpl) 40%,var(--mainOrng) 60%,  var(--mainPrpl) 80%,var(--mainOrng) 100%);
-     --gradientMetalic: linear-gradient(90deg, var(--mainPrpl1) 0%, var(--mainOrng1) 20%, var(--mainPrpl1) 40%,var(--mainOrng1) 60%,  var(--mainPrpl1) 80%,var(--mainOrng1) 100%);
+    --gradient: linear-gradient(90deg, var(--mainPrpl) 0%, var(--mainGreen) 20%, var(--mainPrpl) 40%,var(--mainGreen) 60%,  var(--mainPrpl) 80%,var(--mainGreen) 100%);
+     --gradient2: linear-gradient(90deg, var(--mainPrpl1) 0%, var(--mainGreen1) 20%, var(--mainPrpl1) 40%,var(--mainGreen1) 60%,  var(--mainPrpl1) 80%,var(--mainGreen1) 100%);
 }
 
 body
@@ -72,7 +72,7 @@ body
 #niedziela-big
 {
     animation: animateBG1;
-    background: var(--gradientMetalic);
+    background: var(--gradient2);
     animation-duration: 3.0s;
     background-size:500%;
     animation-timing-function: linear;
@@ -118,7 +118,9 @@ body
 .date
 {
     width: fit-content;
-    margin: 1rem auto;
+    margin: 0.4rem auto;
+    padding: 0.5rem 1rem;
+    background-color: var(--container);
 }
 #daty
 {
@@ -137,6 +139,8 @@ body
     margin:3rem auto 2rem auto;
     width: fit-content;
     font-size: 2rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.477);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.477);
 }
 @keyframes animateBG1
 {
