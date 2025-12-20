@@ -24,22 +24,6 @@ function zaIleNiedziela() {
 
 const elements = { "ODP": document.getElementById("niedziela-big"), "INFO": document.getElementById("niedziela-smol"), "CALENDAR": document.getElementById("datyIn") }
 
-let hidden = true;
-
-function hoverUnhover()
-{
-    if (hidden)
-    {
-        document.getElementById("daty").style.top = "50vh";
-        hidden = !hidden;
-    }
-    else
-    {
-        document.getElementById("daty").style.top = "100vh";
-        hidden = !hidden;
-    }
-}
-
 function launch() {
     let [dni, NastepneNiedziele] = zaIleNiedziela();
 

@@ -97,22 +97,8 @@ body
     width:fit-content;
     padding: 1rem 2rem;
     background-color: var(--container);
-    border-radius: 4px 4px 4px 4px;
-    box-shadow: 2px 3px 4px 1px rgba(40, 40, 40, 0.279);
+
     transition: all 0.05s ease-in-out;
-}
-#kalendarzBtn:hover, #kalendarzBtn2:hover
-{
-    transform: scale(1.01);
-    cursor:pointer;
-}
-#kalendarzBtn
-{
-    margin-top: 10%;
-}
-#kalendarzBtn2
-{
-    margin-top: 4%;
 }
 
 .date
@@ -121,26 +107,26 @@ body
     margin: 0.4rem auto;
     padding: 0.5rem 1rem;
     background-color: var(--container);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 2px 3px 4px 1px rgba(40, 40, 40, 0.279);
 }
-#daty
+#datyIn
 {
-    backdrop-filter: blur(4px);;
-    transition: all 0.4s ease-in-out;
-    position: absolute;
-    top:100vh;
-    left:0;
-    background-color: var(--container2);
-    transform: rotate(1.01);
-    height: 50vh;
-    width:100vw;
+    margin:auto;
+    width: var(--maskWidth);
+    display:flex;
 }
 #niedziela-bottom
 {
-    margin:3rem auto 2rem auto;
+    margin:4rem auto 2rem auto;
     width: fit-content;
+    padding: 0.5rem 1rem;
+    background-color: var(--container);
     font-size: 2rem;
-    border-top: 2px solid rgba(255, 255, 255, 0.477);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.477);
+    border-top: 2px solid rgba(176, 166, 166, 0.477);
+    border-bottom: 2px solid rgba(176, 166, 166, 0.477);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 2px 3px 4px 1px rgba(40, 40, 40, 0.279);
 }
 @keyframes animateBG1
 {
