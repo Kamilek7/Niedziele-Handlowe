@@ -1,5 +1,5 @@
-// dane pobrane ze strony: https://www.kalendarzswiat.pl/
-// plik stworzony przez plik scraping.js
+// Dane pobrane ze strony: https://www.kalendarzswiat.pl/
+// Plik stworzony przez plik scraping.js
 dates = [
 '2025-1-26',
 '2025-4-13',
