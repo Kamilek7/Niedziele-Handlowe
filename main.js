@@ -48,18 +48,12 @@ function launch() {
     }
     else if (dni < 7) {
         elements["ODP"].innerHTML = "Tak";
-        if (dni==1 ?() => {elements["INFO"].innerHTML = "Następna niedziela jest jutro";}: ()=>{elements["INFO"].innerHTML = `Następna niedziela jest za ${dni} dni`;});
-
+        elements["INFO"].innerHTML = `Niedziela handlowa ${(dni == 1) ? 'już jutro!' : 'jest za ' + dni + ' dni'}`;
     }
     else {
         elements["ODP"].innerHTML = "Nie";
-        elements["INFO"].innerHTML = `Następna niedziela jest dopiero za ${dni} dni`;
+        elements["INFO"].innerHTML = `Następna niedziela handlowa jest dopiero za ${dni} dni`;
     }
-
-    let inner= ""
-    NastepneNiedziele.forEach((dzien)=>{
-        inner+= `<div class='date'>${dzien}</div>`;
-    })
-    elements["CALENDAR"].innerHTML = inner;
-    
 }
+
+launch()
