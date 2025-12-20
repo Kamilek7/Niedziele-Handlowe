@@ -2,18 +2,29 @@ function zaIleNiedziela() {
     now = new Date();
     now.setHours(0, 0, 0, 0);
 
+    days_left = -1
+    closest = []
+
     for (i = 0; i < dates.length; i++) {
         date = Date.parse(dates[i])
         if (now > date) { continue }
 
-        return Math.floor((date - now) / (1000 * 60 * 60 * 24))
+        if (days_left == -1) {
+            days_left = Math.floor((date - now) / (1000 * 60 * 60 * 24))
+            continue
+        }
+
+        closest.push(new Intl.DateTimeFormat('pl-PL', { day: 'numeric', month: 'long' }).format(date))
+        if (closest.length >= 3) break
     };
+
+    return [days_left, closest]
 }
 
 const elements = { "ODP": document.getElementById("niedziela-big"), "INFO": document.getElementById("niedziela-smol"), "CALENDAR": document.getElementById("kalendarz") }
 
 function launch() {
-    let niedzielaNajblizsza = zaIleNiedziela();
+    let [niedzielaNajblizsza, NastepneNiedziele] = zaIleNiedziela();
 
     if (niedzielaNajblizsza == 0) {
         elements["ODP"].innerHTML = "Tak";
@@ -28,3 +39,5 @@ function launch() {
         elements["INFO"].innerHTML = `Następna niedziela jest dopiero za ${dni} dni`;
     }
 }
+
+launch()
