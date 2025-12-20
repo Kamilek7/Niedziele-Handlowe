@@ -24,19 +24,19 @@ function zaIleNiedziela() {
 const elements = { "ODP": document.getElementById("niedziela-big"), "INFO": document.getElementById("niedziela-smol"), "CALENDAR": document.getElementById("kalendarz") }
 
 function launch() {
-    let [niedzielaNajblizsza, NastepneNiedziele] = zaIleNiedziela();
+    let [dni, NastepneNiedziele] = zaIleNiedziela();
 
-    if (niedzielaNajblizsza == 0) {
-        elements["ODP"].innerHTML = "Tak";
-        elements["INFO"].innerHTML = "Dzisiaj jest niedziela";
+    if (dni == 0) {
+        elements["ODP"].innerHTML = "Tak!";
+        elements["INFO"].innerHTML = "Dzisiaj jest niedziela handlowa!";
     }
-    else if (niedzielaNajblizsza < 7) {
+    else if (dni < 7) {
         elements["ODP"].innerHTML = "Tak";
-        elements["INFO"].innerHTML = `Następna niedziela jest za ${dni} dni`;
+        elements["INFO"].innerHTML = `Niedziela handlowa ${(dni == 1) ? 'już jutro!' : 'jest za ' + dni + ' dni'}`;
     }
     else {
         elements["ODP"].innerHTML = "Nie";
-        elements["INFO"].innerHTML = `Następna niedziela jest dopiero za ${dni} dni`;
+        elements["INFO"].innerHTML = `Następna niedziela handlowa jest dopiero za ${dni} dni`;
     }
 }
 
