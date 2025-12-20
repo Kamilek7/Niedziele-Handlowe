@@ -1,6 +1,13 @@
-function sonntagChecken() 
-{
+function zaIleNiedzielaHandlowa() {
+    now = new Date();
+    now.setHours(0, 0, 0, 0);
 
+    for (i = 0; i < dates.length; i++) {
+        date = Date.parse(dates[i])
+        if (now > date) { continue }
+
+        return Math.floor((date - now) / (1000 * 60 * 60 * 24))
+    };
 }
 
 function niedzielaDzisiaj(elements)
