@@ -7,6 +7,36 @@
     font-family: 'BBHBartle';
     src:  url('BBHBartle-Regular.ttf')  format('truetype');
 }
+@media only screen and (orientation: landscape)
+{
+    :root
+    {
+        --mainMargin: 10%;
+        --maskWidth: 50vw;
+        --fontMid: 6vh;
+        --fontBig: 20vh;
+        --fontSmall: 5vh;
+        --fontVerySmall: 3vh;
+        --align:flex;
+        --marginsForBlocks: auto 1.4vw;
+    }
+
+}
+
+@media only screen and (orientation: portrait)
+{
+    :root
+    {
+        --mainMargin: 30%;
+        --maskWidth: 80vw;
+        --fontMid: 8vw;
+        --fontBig: 12vh;
+        --fontSmall: 6vw;
+        --fontVerySmall: 2.5vh;
+        --align: block;
+        --marginsForBlocks: 2vh auto;
+    }
+}
 :root
 {
     user-select: none;
@@ -17,7 +47,6 @@
     --mainPrpl1: #c00a6b;
     --container: #d4c5fd44;
     --container2: #3a384344;
-    --maskWidth: calc(25rem + 20vw);
     --gradient: linear-gradient(90deg, var(--mainPrpl) 0%, var(--mainGreen) 20%, var(--mainPrpl) 40%,var(--mainGreen) 60%,  var(--mainPrpl) 80%,var(--mainGreen) 100%);
      --gradient2: linear-gradient(90deg, var(--mainPrpl1) 0%, var(--mainGreen1) 20%, var(--mainPrpl1) 40%,var(--mainGreen1) 60%,  var(--mainPrpl1) 80%,var(--mainGreen1) 100%);
 }
@@ -50,11 +79,11 @@ body
 }
 #container
 {
-    padding: 2rem 0;
+    padding: 4vh 0;
     background-color: var(--container);
     width:100vw;
     margin:0;
-    margin-top: 10%;
+    margin-top: var(--mainMargin);
     box-shadow: 0px 4px 10px 2px rgba(40, 40, 40, 0.279);
 }
 #container > *
@@ -67,7 +96,7 @@ body
     width:var(--maskWidth);
     border-top: 2px solid rgba(209, 209, 209, 0.848);
     mask-image: var(--mask);
-    font-size: 2.5rem;
+    font-size: var(--fontMid);
 }
 #niedziela-big
 {
@@ -81,48 +110,40 @@ body
     background-clip: text;
     transform:scaleY(1.4);
     font-family: 'BBHBartle';
-    font-size: 7.5rem;
+    font-size: var(--fontBig);
 }
 #niedziela-smol
 {
     width:var(--maskWidth);
-    font-size: 1.5rem;
+    font-size: var(--fontSmall);
     mask-image: var(--mask);
     border-bottom: 3px solid rgba(209, 209, 209, 0.69);
-}
-
-#kalendarzBtn, #kalendarzBtn2
-{
-    margin:auto;
-    width:fit-content;
-    padding: 1rem 2rem;
-    background-color: var(--container);
-
-    transition: all 0.05s ease-in-out;
 }
 
 .date
 {
     width: fit-content;
-    margin: 0.4rem auto;
-    padding: 0.5rem 1rem;
+    margin: var(--marginsForBlocks);
+    padding: 0.5vh 1.5vh;
     background-color: var(--container);
     border-radius: 4px 4px 4px 4px;
     box-shadow: 2px 3px 4px 1px rgba(40, 40, 40, 0.279);
+    font-size: var(--fontVerySmall);
 }
 #datyIn
 {
     margin:auto;
-    width: var(--maskWidth);
-    display:flex;
+    width: fit-content;
+    display:var(--align);
 }
 #niedziela-bottom
 {
-    margin:4rem auto 2rem auto;
-    width: fit-content;
-    padding: 0.5rem 1rem;
+    margin:4vh auto 5vh auto;
+    text-align: center;
+    width: 40%;
+    padding: 0.5vh 1vh;
     background-color: var(--container);
-    font-size: 2rem;
+    font-size: var(--fontSmall);
     border-top: 2px solid rgba(176, 166, 166, 0.477);
     border-bottom: 2px solid rgba(176, 166, 166, 0.477);
     border-radius: 4px 4px 4px 4px;
