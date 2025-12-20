@@ -12,7 +12,7 @@
     :root
     {
         --mainMargin: 10%;
-        --maskWidth: 50vw;
+        --maskWidth: 60vw;
         --fontMid: 6vh;
         --fontBig: 20vh;
         --fontSmall: 5vh;
@@ -28,11 +28,11 @@
     :root
     {
         --mainMargin: 30%;
-        --maskWidth: 80vw;
-        --fontMid: 8vw;
+        --maskWidth: 100vw;
+        --fontMid: 4vh;
         --fontBig: 12vh;
-        --fontSmall: 6vw;
-        --fontVerySmall: 5vw;
+        --fontSmall: 3vh;
+        --fontVerySmall: 2.5vh;
         --align: block;
         --marginsForBlocks: 2vh auto;
     }
