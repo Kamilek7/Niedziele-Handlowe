@@ -54,6 +54,12 @@ function launch() {
         elements["ODP"].innerHTML = "Nie";
         elements["INFO"].innerHTML = `Następna niedziela handlowa jest dopiero za ${dni} dni`;
     }
+    
+    let inner= ""
+    NastepneNiedziele.forEach((dzien)=>{
+        inner+= `<div class='date'>${dzien}</div>`;
+    })
+    elements["CALENDAR"].innerHTML = inner;
 }
 
 launch()
