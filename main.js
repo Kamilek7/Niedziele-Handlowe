@@ -1,4 +1,4 @@
-function zaIleNiedzielaHandlowa() {
+function zaIleNiedziela() {
     now = new Date();
     now.setHours(0, 0, 0, 0);
 
@@ -10,38 +10,21 @@ function zaIleNiedzielaHandlowa() {
     };
 }
 
-function niedzielaDzisiaj(elements)
-{
-    elements["ODP"].innerHTML = "Tak";
-    elements["INFO"].innerHTML = "Dzisiaj jest niedziela";      
-}
-function niedzielaWTymTygodniu(elements, dni)
-{
-    elements["ODP"].innerHTML = "Tak";
-    elements["INFO"].innerHTML = `Następna niedziela jest za ${dni} dni`;  
-}
-function niedzielaDaleko(elements, dni)
-{
-    elements["ODP"].innerHTML = "Nie";
-    elements["INFO"].innerHTML = `Następna niedziela jest dopiero za ${dni} dni`;  
-}
+const elements = { "ODP": document.getElementById("niedziela-big"), "INFO": document.getElementById("niedziela-smol"), "CALENDAR": document.getElementById("kalendarz") }
 
-const elements = {"ODP" : document.getElementById("niedziela-big"), "INFO" : document.getElementById("niedziela-smol"), "CALENDAR" : document.getElementById("kalendarz")}
+function launch() {
+    let niedzielaNajblizsza = zaIleNiedziela();
 
-function launch()
-{
-    let niedzielaNajblizsza=sonntagChecken();
-    
-    if (niedzielaNajblizsza==0)
-    {
-        niedzielaDzisiaj(elements);
+    if (niedzielaNajblizsza == 0) {
+        elements["ODP"].innerHTML = "Tak";
+        elements["INFO"].innerHTML = "Dzisiaj jest niedziela";
     }
-    else if (niedzielaNajblizsza<7)
-    {
-        niedzielaWTymTygodniu(elements, niedzielaNajblizsza);
+    else if (niedzielaNajblizsza < 7) {
+        elements["ODP"].innerHTML = "Tak";
+        elements["INFO"].innerHTML = `Następna niedziela jest za ${dni} dni`;
     }
-    else
-    {
-        niedzielaDaleko(elements, niedzielaNajblizsza);
+    else {
+        elements["ODP"].innerHTML = "Nie";
+        elements["INFO"].innerHTML = `Następna niedziela jest dopiero za ${dni} dni`;
     }
 }
