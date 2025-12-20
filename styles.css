@@ -1,0 +1,98 @@
+
+@font-face {
+    font-family: 'BebasNeue';
+    src:  url('BebasNeue-Regular.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'BBHBartle';
+    src:  url('BBHBartle-Regular.ttf')  format('truetype');
+}
+:root
+{
+    user-select: none;
+    --mask: linear-gradient(90deg, transparent, black 15%, black 85%, transparent);
+    --mainOrng: #79ae45;
+    --mainPrpl: #ae456d;
+    --mainOrng1: #5ba90d;
+    --mainPrpl1: #c00a6b;
+    --maskWidth: calc(20rem + 15vw);
+    --gradient: linear-gradient(90deg, var(--mainPrpl) 0%, var(--mainOrng) 20%, var(--mainPrpl) 40%,var(--mainOrng) 60%,  var(--mainPrpl) 80%,var(--mainOrng) 100%);
+     --gradientMetalic: linear-gradient(90deg, var(--mainPrpl1) 0%, var(--mainOrng1) 20%, var(--mainPrpl1) 40%,var(--mainOrng1) 60%,  var(--mainPrpl1) 80%,var(--mainOrng1) 100%);
+}
+
+body
+{
+    font-family: 'BebasNeue';
+    background-color: #393641;
+    margin:0;
+}
+
+#bg
+{
+    position:absolute;
+    top:0;
+    left:0;
+    margin:0;
+    filter: blur(5rem);
+    height:100vh;
+    width:100vw;
+    animation: animateBG1;
+    background: var(--gradient);
+    animation-duration: 50.0s;
+    background-size:500%;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: -1;
+}
+#container
+{
+    padding: 2rem 0;
+    background-color: #d4c5fd44;
+    width:100vw;
+    margin:0;
+    margin-top: 10%;
+}
+#container > *
+{
+    margin:auto;
+    text-align: center;
+}
+#niedziela-mid
+{
+    width:var(--maskWidth);
+    border-top: 2px solid rgba(209, 209, 209, 0.848);
+    mask-image: var(--mask);
+    font-size: 2.5rem;
+}
+#niedziela-big
+{
+    animation: animateBG1;
+    background: var(--gradientMetalic);
+    animation-duration: 3.0s;
+    background-size:500%;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    color:transparent;
+    background-clip: text;
+    transform:scaleY(1.4);
+    font-family: 'BBHBartle';
+    font-size: 7.5rem;
+}
+#niedziela-smol
+{
+    width:var(--maskWidth);
+    font-size: 1.5rem;
+    mask-image: var(--mask);
+    border-bottom: 3px solid rgba(209, 209, 209, 0.69);
+}
+@keyframes animateBG1
+{
+    0%
+    {
+        background-position: left;
+    }
+    100%
+    {
+        background-position:right;
+    }
+}
