@@ -21,7 +21,7 @@ function zaIleNiedziela() {
     return [days_left, closest]
 }
 
-const elements = { "ODP": document.getElementById("niedziela-big"), "INFO": document.getElementById("niedziela-smol"), "CALENDAR": document.getElementById("kalendarz") }
+const elements = { "ODP": document.getElementById("niedziela-big"), "INFO": document.getElementById("niedziela-smol"), "CALENDAR": document.getElementById("datyIn") }
 
 let hidden = true;
 
@@ -48,21 +48,18 @@ function launch() {
     }
     else if (dni < 7) {
         elements["ODP"].innerHTML = "Tak";
-<<<<<<< HEAD
-        if (niedzielaNajblizsza==1 ?() => {elements["INFO"].innerHTML = "Następna niedziela jest jutro";}: ()=>{elements["INFO"].innerHTML = `Następna niedziela jest za ${niedzielaNajblizsza} dni`;});
+        if (dni==1 ?() => {elements["INFO"].innerHTML = "Następna niedziela jest jutro";}: ()=>{elements["INFO"].innerHTML = `Następna niedziela jest za ${dni} dni`;});
 
     }
     else {
         elements["ODP"].innerHTML = "Nie";
-        elements["INFO"].innerHTML = `Następna niedziela jest dopiero za ${niedzielaNajblizsza} dni`;
-=======
-        elements["INFO"].innerHTML = `Niedziela handlowa ${(dni == 1) ? 'już jutro!' : 'jest za ' + dni + ' dni'}`;
+        elements["INFO"].innerHTML = `Następna niedziela jest dopiero za ${dni} dni`;
     }
-    else {
-        elements["ODP"].innerHTML = "Nie";
-        elements["INFO"].innerHTML = `Następna niedziela handlowa jest dopiero za ${dni} dni`;
->>>>>>> 0bc01dcaf176e49da9a6cf5b0ebe84f7967f4482
-    }
+
+    let inner= ""
+    NastepneNiedziele.forEach((dzien)=>{
+        inner+= `<div class='date'>${dzien}</div>`;
+    })
+    elements["CALENDAR"].innerHTML = inner;
+    
 }
-
-launch()
