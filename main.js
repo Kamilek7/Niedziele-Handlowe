@@ -11,7 +11,8 @@ function zaIleNiedziela() {
 
         if (days_left == -1) {
             days_left = Math.floor((date - now) / (1000 * 60 * 60 * 24))
-            continue
+            if (days_left == 0)
+                continue
         }
 
         closest.push(new Intl.DateTimeFormat('pl-PL', { day: 'numeric', month: 'long' }).format(date))
