@@ -9,14 +9,17 @@ for (let i = 0; i < sonntagen.length; i++)
 {
     sonntagen[i] = new Date(sonntagen[i]);
 }
-sonntagen.forEach((tag) => {
-    let sonntagElement = document.getElementById("niedziela-big");
-    if (sonntagChecken(tag)) 
-    {
-        sonntagElement.innerHTML="Tak";
-    }
-    else
-    {
-        sonntagElement.innerHTML="Nie";
-    }
-})
+function zumStart()
+{
+    sonntagen.forEach((tag) => {
+        let sonntagElement = document.getElementById("niedziela-big");
+        let sonntagZusammenfassung = document.getElementById("niedziela-smol");
+        
+        if (sonntagChecken(tag)) 
+        {
+            sonntagElement.innerHTML="Tak";
+
+        }
+
+    })
+}
