@@ -1,40 +1,29 @@
-function sonntagChecken(date) 
+function sonntagChecken() 
 {
 
 }
 
 function niedzielaDzisiaj(elements)
 {
-       
+    elements["ODP"].innerHTML = "Tak";
+    elements["INFO"].innerHTML = "Dzisiaj jest niedziela";      
 }
-function niedzielaWTymTygodniu(elements)
+function niedzielaWTymTygodniu(elements, dni)
 {
-
+    elements["ODP"].innerHTML = "Tak";
+    elements["INFO"].innerHTML = `Następna niedziela jest za ${dni} dni`;  
 }
-function niedzielaDaleko(elements)
+function niedzielaDaleko(elements, dni)
 {
-
+    elements["ODP"].innerHTML = "Nie";
+    elements["INFO"].innerHTML = `Następna niedziela jest dopiero za ${dni} dni`;  
 }
 
 const elements = {"ODP" : document.getElementById("niedziela-big"), "INFO" : document.getElementById("niedziela-smol"), "CALENDAR" : document.getElementById("kalendarz")}
 
-let sonntagen = ["2025.4.13", "2025.4.27", "2025.6.29", "2025.8.31", "2025.12.7", "2025.12.14", "2025.12.21", "2026.1.26", "2026.4.13"]
-for (let i = 0; i < sonntagen.length; i++) 
+function launch()
 {
-    sonntagen[i] = new Date(sonntagen[i]);
-}
-function zumStart()
-{
-    let niedzielaNajblizsza=-1;
-    let niedzielaNajblizszaDate
-    sonntagen.forEach((tag) => {
-        let dni = sonntagChecken(tag);
-        if (dni<=niedzielaNajblizsza || niedzielaNajblizsza==-1)
-        {
-            niedzielaNajblizsza=dni;
-            niedzielaNajblizszaDate = tag;
-        }
-    })
+    let niedzielaNajblizsza=sonntagChecken();
     
     if (niedzielaNajblizsza==0)
     {
