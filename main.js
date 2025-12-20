@@ -31,10 +31,10 @@ function launch()
     }
     else if (niedzielaNajblizsza<7)
     {
-        niedzielaWTymTygodniu(elements);
+        niedzielaWTymTygodniu(elements, niedzielaNajblizsza);
     }
     else
     {
-        niedzielaDaleko(elements);
+        niedzielaDaleko(elements, niedzielaNajblizsza);
     }
 }
