@@ -12,6 +12,22 @@ function zaIleNiedziela() {
 
 const elements = { "ODP": document.getElementById("niedziela-big"), "INFO": document.getElementById("niedziela-smol"), "CALENDAR": document.getElementById("kalendarz") }
 
+let hidden = true;
+
+function hoverUnhover()
+{
+    if (hidden)
+    {
+        document.getElementById("daty").style.top = "50vh";
+        hidden = !hidden;
+    }
+    else
+    {
+        document.getElementById("daty").style.top = "100vh";
+        hidden = !hidden;
+    }
+}
+
 function launch() {
     let niedzielaNajblizsza = zaIleNiedziela();
 
@@ -21,10 +37,11 @@ function launch() {
     }
     else if (niedzielaNajblizsza < 7) {
         elements["ODP"].innerHTML = "Tak";
-        elements["INFO"].innerHTML = `Następna niedziela jest za ${dni} dni`;
+        if (niedzielaNajblizsza==1 ?() => {elements["INFO"].innerHTML = "Następna niedziela jest jutro";}: ()=>{elements["INFO"].innerHTML = `Następna niedziela jest za ${niedzielaNajblizsza} dni`;});
+
     }
     else {
         elements["ODP"].innerHTML = "Nie";
-        elements["INFO"].innerHTML = `Następna niedziela jest dopiero za ${dni} dni`;
+        elements["INFO"].innerHTML = `Następna niedziela jest dopiero za ${niedzielaNajblizsza} dni`;
     }
 }
