@@ -29,15 +29,15 @@ function launch() {
 
     if (dni == 0) {
         elements["ODP"].innerHTML = "Tak!";
-        elements["INFO"].innerHTML = "Dzisiaj jest niedziela handlowa!";
+        elements["INFO"].innerHTML = "<div class='fitText'>Dzisiaj jest niedziela handlowa!</div>";
     }
     else if (dni < 7) {
         elements["ODP"].innerHTML = "Tak";
-        elements["INFO"].innerHTML = `Niedziela handlowa ${(dni == 1) ? 'już jutro!' : 'jest za ' + dni + ' dni'}`;
+        elements["INFO"].innerHTML = `<div class='fitText'>Niedziela handlowa ${(dni == 1) ? 'już jutro!' : 'jest za ' + dni + ' dni</div>'}`;
     }
     else {
         elements["ODP"].innerHTML = "Nie";
-        elements["INFO"].innerHTML = `Następna niedziela handlowa jest dopiero za ${dni} dni`;
+        elements["INFO"].innerHTML = `<div class='fitText'>Następna niedziela handlowa jest dopiero za ${dni} dni</div>`;
     }
     
     let inner= ""

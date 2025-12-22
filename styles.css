@@ -150,6 +150,11 @@ body
     border-radius: 4px 4px 4px 4px;
     box-shadow: 2px 3px 4px 1px rgba(40, 40, 40, 0.279);
 }
+.fitText
+{
+    margin:auto;
+    width:80%;
+}
 @keyframes animateBG1
 {
     0%
