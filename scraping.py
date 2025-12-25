@@ -53,6 +53,7 @@ if old_data == new_data:
     print("dane bez zmian")
 else:
     print("nowe dane, robienie commita")
+    os.system("git pull --rebase")
     os.system("git add dates.js")
     os.system(f"git commit -m \"automatyczna aktualizacja danych [{y}]\"")
     os.system("git push origin main")
